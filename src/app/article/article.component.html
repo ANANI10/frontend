@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Article Page</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+          data-bs-whatever="@fat">Ajout d'article</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Ajout d'Article</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="libelle" class="col-form-label">Libelle</label>
+                    <input type="text" class="form-control" id="libelle" placeholder="Entrez le libelle">
+                  </div>
+                  <div class="mb-3">
+                    <label for="Prix" class="col-form-label">Prix</label>
+                    <input type="number" class="form-control" id="Prix" placeholder="Entrez un prix">
+                  </div>
+                  <div class="mb-3">
+                    <label for="qteStock" class="col-form-label">QteStock</label>
+                    <input type="number" class="form-control" id="qteStock" placeholder="Entrez la quantite stock">
+                  </div>
+                  <div class="mb-3">
+                    <label for="dateCreation" class="col-form-label">DateCreation</label>
+                    <input type="date" class="form-control" id="dateCreation" placeholder="Entrez la date">
+                  </div>
+                  <div class="mb-3">
+                    <label for="qteSeuil" class="col-form-label">QteSeuil</label>
+                    <input type="number" class="form-control" id="qteSeuil" placeholder="Entrez la quantite seuil">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </ul>
+      <span class="navbar-text">
+        Article Page
+      </span>
+    </div>
+  </div>
+</nav>
+
+<div class="form-group">
+  <input id="search" class="form-control" type="text" placeholder="search">
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">libelle</th>
+      <th scope="col">Prix</th>
+      <th scope="col">QteStock</th>
+      <th scope="col">DateCreation</th>
+      <th scope="col">QteSeuil</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let article of listArticle">
+      <th scope="row"> {{article.id}} </th>
+      <th scope="row">{{article.libelle}} </th>
+      <th scope="row">{{article.prix}} </th>
+      <th scope="row">{{article.qteStock}} </th>
+      <th scope="row">{{article.dateCreation | date}}</th>
+      <th scope="row">{{article.qteSeuil}}</th>
+      <button class="delete-button" (click)="onDeleteArticle(article.id)"><i class="fas fa-trash-alt"></i></button>
+      <button class="update-button"><i class="fas fa-pencil-alt"></i></button>
+    </tr>
+  </tbody>
+</table>

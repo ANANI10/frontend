@@ -1,0 +1,45 @@
+
+.delete-button{
+    color:red;
+    margin:2;
+    padding: 1;
+    border:none;
+}
+
+.update-button{
+    color:blue;
+    margin:2;
+    padding: 1;
+    border:none;
+}
+
+td {
+    padding: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.navbar-brand{
+    font-family: 'Times New Roman', Times, serif;
+    width: 100;
+}
+
+nav ul {
+    position: absolute; /* Position absolue pour placer l'élément ul */
+    top: 0; /* Positionne l'élément au sommet de la balise nav */
+    right: 0; /* Positionne l'élément tout à droite de la balise nav */
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les marges internes par défaut */
+    list-style: none; /* Supprime les puces de liste par défaut */
+}
+
+table {
+    position: absolute; /* Position absolue pour centrer le tableau */
+    top: 20%; /* Déplace le tableau à 50% de la hauteur de la fenêtre */
+}
+
+
+.form-group{
+    top: 15px;
+    border-color: red;
+    margin: 10px;
+}

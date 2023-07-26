@@ -1,0 +1,16 @@
+<h1 style="text-align:center">
+    Bienvenue sur la Page Administrateur
+</h1>
+<div class="login">
+    <h2 class="login-header">S'identifier</h2>
+    <form [formGroup]="loginForm" class="login-container" (ngSubmit)="seConnecter()">
+
+        <input type="email" placeholder="Email" formControlName="email">
+
+        <input type="password" placeholder="Password" formControlName="password">
+
+        <p>
+            <input type="submit" value="Log in" routerLink="/dashbord">
+        </p>
+    </form>
+</div>

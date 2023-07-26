@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Page de Vente</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+          data-bs-whatever="@fat">Ajout de vente</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Ajout de vente</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="dateVente" class="col-form-label">DateVente</label>
+                    <input type="date" class="form-control" id="DateVente" placeholder="Entrez la vente">
+                  </div>
+                  <div class="mb-3">
+                    <label for="QteVente" class="col-form-label">QteVente</label>
+                    <input type="number" class="form-control" id="QteVente" placeholder="Entrez la QteVente">
+                  </div>
+                  <div class="mb-3">
+                    <label for="ArticleId" class="col-form-label">ArticleId</label>
+                    <input type="number" class="form-control" id="ArticleId" placeholder="Entrez le id de l'article">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<div class="form-group">
+  <input id="search" class="form-control" type="text" placeholder="search">
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">DateVente</th>
+      <th scope="col">QteVente</th>
+      <th scope="col">ArticleId</th>
+      <th scope="col">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ventes of listVente">
+      <td scope="row"> {{ventes.id}} </td>
+      <td scope="row">{{ventes.dateVente | date}} </td>
+      <td scope="row">{{ventes.qteVente}} </td>
+      <td scope="row">{{ventes.ArticleId}} </td>
+      <button class="delete-button" (click)="onDeleteVente(ventes.id)"><i class="fas fa-trash-alt"></i></button>
+      <button class="update-button"><i class="fas fa-pencil-alt"></i></button>
+    </tr>
+  </tbody>
+</table>
